@@ -12,9 +12,11 @@
             theme: {
                 extend: {
                     colors: {
-                        'primary': '#4f46e5',
-                        'secondary': '#6366f1',
-                        'background': '#f9fafb',
+                        // VIBRANT PALETTE
+                        'primary': '#6366f1', // Bright Indigo (Main Action Color)
+                        'secondary': '#4f46e5', // Darker Indigo (Hover State)
+                        'accent': '#06b6d4', // Vibrant Cyan/Teal (Highlight/Focus)
+                        'background': '#f1f5f9', // Light Blue-Gray background for contrast
                         'card-bg': '#ffffff',
                     },
                     fontFamily: {
@@ -28,35 +30,44 @@
         /* Ensuring smooth scrolling and setting the default font */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f9fafb;
+            background-color: #f1f5f9;
             scroll-behavior: smooth;
+        }
+        /* Custom vibrant shadow for deeper, punchier look */
+        .vibrant-shadow {
+            /* Deeper shadow using the primary color */
+            box-shadow: 0 15px 30px -5px rgba(99, 102, 241, 0.25), 0 5px 15px -3px rgba(99, 102, 241, 0.1);
+        }
+        .vibrant-shadow:hover {
+            /* Even more pronounced shadow on hover */
+            box-shadow: 0 25px 50px -12px rgba(99, 102, 241, 0.5), 0 15px 25px -5px rgba(99, 102, 241, 0.3);
         }
     </style>
 </head>
 <body class="text-gray-800 antialiased">
 
     <!-- Navigation (Simple fixed header for quick navigation) -->
-    <header class="bg-card-bg shadow-md sticky top-0 z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-primary">Devikrishna P.R</a>
+    <header class="bg-card-bg shadow-lg sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-primary transition duration-300 hover:text-accent">Devikrishna P.R</a>
             <nav class="space-x-4">
-                <a href="#about" class="text-gray-600 hover:text-primary transition duration-300">About</a>
-                <a href="#education" class="text-gray-600 hover:text-primary transition duration-300">Education</a>
-                <a href="#contact" class="text-gray-600 hover:text-primary transition duration-300">Contact</a>
+                <a href="#about" class="text-gray-600 hover:text-accent transition duration-300">About</a>
+                <a href="#education" class="text-gray-600 hover:text-accent transition duration-300">Education</a>
+                <a href="#contact" class="text-gray-600 hover:text-accent transition duration-300">Contact</a>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="py-20 md:py-32 bg-background">
+    <section class="py-24 md:py-40 bg-background">
         <div class="max-w-4xl mx-auto px-6 sm:px-8 text-center">
             <h1 class="text-5xl sm:text-7xl font-extrabold leading-tight mb-4 text-gray-900">
                 Hi, I'm <span class="text-primary">Devikrishna P.R</span>
             </h1>
-            <p class="text-xl sm:text-2xl text-gray-600 mb-8">
+            <p class="text-xl sm:text-2xl text-gray-600 mb-10">
                 Computer Engineering Student | VAST | From Manalur
             </p>
-            <a href="#education" class="inline-block bg-primary hover:bg-secondary text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+            <a href="#education" class="inline-block bg-primary hover:bg-secondary text-white font-extrabold py-3 px-10 rounded-full shadow-2xl transition duration-300 transform hover:scale-105 vibrant-shadow">
                 Explore My Journey
             </a>
         </div>
@@ -65,8 +76,8 @@
     <!-- About Section -->
     <section id="about" class="py-16 md:py-24 bg-card-bg">
         <div class="max-w-4xl mx-auto px-6 sm:px-8">
-            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">About Me</h2>
-            <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12 border-b-4 border-accent inline-block pb-1">About Me</h2>
+            <div class="bg-white p-8 rounded-xl shadow-xl border-t-4 border-accent">
                 <p class="text-lg leading-relaxed text-gray-700">
                     I am **Devikrishna P.R**, an aspiring **Computer Engineering** professional dedicated to learning and building innovative solutions.
                     Currently pursuing my degree at **VAST**, I am focused on mastering core computer science concepts and applying them to real-world projects.
@@ -80,17 +91,17 @@
     <!-- Education Section -->
     <section id="education" class="py-16 md:py-24 bg-background">
         <div class="max-w-4xl mx-auto px-6 sm:px-8">
-            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">Education</h2>
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12 border-b-4 border-primary inline-block pb-1">Education</h2>
 
             <div class="space-y-8">
                 <!-- VAST Entry -->
-                <div class="bg-card-bg p-6 sm:p-8 rounded-xl shadow-lg border-l-4 border-primary transition duration-300 hover:shadow-xl">
+                <div class="bg-card-bg p-6 sm:p-8 rounded-xl shadow-xl border-l-8 border-primary transition duration-500 hover:shadow-2xl hover:vibrant-shadow transform hover:-translate-y-1">
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
                         <div>
                             <h3 class="text-2xl font-semibold text-gray-900">B.Tech in Computer Engineering</h3>
                             <p class="text-lg text-primary font-medium">Vast (Institution Name Placeholder)</p>
                         </div>
-                        <span class="text-sm font-light text-gray-500 mt-2 sm:mt-0">Currently Enrolled</span>
+                        <span class="text-base font-medium text-accent mt-2 sm:mt-0 px-3 py-1 bg-accent/10 rounded-full">Currently Enrolled</span>
                     </div>
                     <p class="mt-4 text-gray-600">
                         Focused coursework in algorithms, data structures, software design, and programming paradigms. Committed to achieving strong academic performance while actively participating in technical initiatives and projects.
@@ -106,29 +117,29 @@
     <!-- Contact Section -->
     <section id="contact" class="py-16 md:py-24 bg-card-bg">
         <div class="max-w-4xl mx-auto px-6 sm:px-8 text-center">
-            <h2 class="text-4xl font-bold text-gray-900 mb-6">Get In Touch</h2>
-            <p class="text-lg text-gray-700 mb-10">
+            <h2 class="text-4xl font-bold text-gray-900 mb-6 border-b-4 border-accent inline-block pb-1">Get In Touch</h2>
+            <p class="text-lg text-gray-700 mb-12">
                 I'm currently focused on my studies but I'm always open to discussing new projects and technical challenges.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-6">
+            <div class="flex flex-col sm:flex-row justify-center gap-8">
                 <!-- Email Placeholder -->
-                <div class="p-6 bg-background rounded-xl shadow-md flex-1 transition duration-300 hover:bg-gray-100">
-                    <p class="text-sm font-semibold text-primary mb-2">Email</p>
-                    <a href="mailto:your.email@example.com" class="text-lg text-gray-800 hover:text-secondary font-medium transition duration-300">
+                <div class="p-8 bg-background rounded-xl shadow-lg flex-1 transition duration-300 hover:ring-4 ring-primary/50 hover:bg-white transform hover:scale-[1.02]">
+                    <p class="text-sm font-extrabold text-accent mb-2 uppercase tracking-wider">Email</p>
+                    <a href="mailto:your.email@example.com" class="text-xl text-gray-800 hover:text-accent font-medium transition duration-300">
                         your.email@example.com
                     </a>
                 </div>
                 <!-- Location Placeholder -->
-                <div class="p-6 bg-background rounded-xl shadow-md flex-1 transition duration-300 hover:bg-gray-100">
-                    <p class="text-sm font-semibold text-primary mb-2">Location</p>
-                    <p class="text-lg text-gray-800 font-medium">Manalur, India</p>
+                <div class="p-8 bg-background rounded-xl shadow-lg flex-1 transition duration-300 hover:ring-4 ring-primary/50 hover:bg-white transform hover:scale-[1.02]">
+                    <p class="text-sm font-extrabold text-accent mb-2 uppercase tracking-wider">Location</p>
+                    <p class="text-xl text-gray-800 font-medium">Manalur, India</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-6">
+    <footer class="bg-gray-900 text-white py-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p class="text-sm">&copy; 2025 Devikrishna P.R. All rights reserved.</p>
         </div>
